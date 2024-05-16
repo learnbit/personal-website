@@ -7,7 +7,10 @@ import { experiences, details } from "../../data";
 import clsx from "clsx";
 import { MenuItem } from "../main";
 
-export function Details(props) {
+export function Details(props: {
+	mainRef: React.MutableRefObject<null>;
+	setSelectedMenuItem: React.Dispatch<React.SetStateAction<MenuItem>>;
+}) {
 	// const detailsRef = useRef(null);
 	const experienceRef = useRef(null);
 	const [isExperienceDisplayed, setIsExperienceDisplayed] = useState(false);

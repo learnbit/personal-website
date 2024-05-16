@@ -7,7 +7,7 @@ import Calendly from "../calendly/index";
 import clsx from "clsx";
 import { MenuItem } from "../main";
 
-export function Header(props) {
+export function Header(props: { selectedMenuItem: string }) {
 	const resumeURL =
 		"https://firebasestorage.googleapis.com/v0/b/airtmdashboard.appspot.com/o/WilsonRaul_Balderrama_Resume.pdf?alt=media&token=43391f34-397a-4f49-a214-f82838cef924";
 	const linkedinURL = "https://www.linkedin.com/in/wilsonbalderrama/";
@@ -19,7 +19,9 @@ export function Header(props) {
 				<div className={styles.namePositionContainer}>
 					<h1 className={styles.name}>Wilson Balderrama</h1>
 					<h2 className={styles.position}>Senior Frontend Engineer</h2>
-					<p className={styles.motto}>Crafting Code, Empowering Users.</p>
+					<p className={styles.motto}>
+						Turning ideas into interactive experiences.
+					</p>
 				</div>
 
 				<ul className={clsx(styles.menu, styles.glassBox)}>
