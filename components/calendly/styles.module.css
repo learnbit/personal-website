@@ -1,0 +1,18 @@
+.calendyButton,
+.titleText {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+}
+
+.calendyButton {
+  margin-top: 8px;
+  color: var(--skill-text-color);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.calendyButton:hover {
+  color: var(--skill-text-selected-color);
+}

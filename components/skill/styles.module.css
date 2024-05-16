@@ -1,0 +1,9 @@
+.skill {
+  border-radius: 16px;
+  padding: 4px 16px;
+  color: var(--skill-text-color);
+  font-size: 12px;
+  line-height: 21px;
+  background-color: var(--skill-backround-color);
+  font-weight: 500;
+}

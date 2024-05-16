@@ -1,0 +1,171 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1.5rem;
+  /* padding-bottom: 6rem; */
+  /* margin-top: 90px; */
+  /* position: sticky;
+  top: 0; */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.namePositionContainer {
+  margin-bottom: 16px;
+  order: 1;
+}
+
+.name {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+.position {
+  font-size: 20px;
+  color: var(--main-text-color)
+}
+
+.calendlyContainer {
+  margin-top: 32px;
+  order: 4;
+}
+
+.motto {
+  margin-top: 8px;
+}
+
+.pdf {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.menuContainer {
+  margin-bottom: 32px;
+}
+
+.socialIcons {
+  display: flex;
+  order: 2;
+}
+
+.socialIcons a {
+  margin-right: 12px;
+}
+
+.titleText {
+  color: var(--secondary-text-color);
+  margin-top: 8px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  /* padding: 16px; */
+  color: var(--secondary-text-color);
+  /* width: 40%; */
+  order: 2;
+  width: 170px;
+}
+
+.menu li a {
+  /* padding-bottom: 8px;
+  border-bottom: 3px solid transparent; */
+  padding: 11px 0;
+  display: inline-block;
+  font-size: 12px;
+  width: 100%;
+  font-weight: 700;
+}
+
+/* .menu a:hover::before, */
+.menu a span {
+  display: none;
+  width: 30px;
+  height: 1px;
+  margin-right: 16px;
+  vertical-align: middle;
+  background-color: var(--secondary-text-color);
+}
+
+.menu li span {
+  display: inline-block;
+}
+
+.menu li.active span {
+  width: 50px;
+  height: 2px;
+  background-color: var(--main-text-color);
+}
+
+.menu li.active {
+  color: var(--main-text-color);
+}
+
+.calendlySocial {
+  display: flex;
+  flex-direction: column;
+  order: 3
+}
+
+@media (min-width: 650px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .menu {
+    margin-top: 40px;
+  }
+
+  .calendlySocial {
+    margin-top: auto;
+  }
+
+  /* .calendlyContainer {
+    margin-bottom: 32px;
+  } */
+}
+
+@media (min-width: 850px) {
+  .container {
+    position: sticky;
+    top: 0;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .content {
+    width: 80%;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+  }
+
+  .namePositionContainer {
+    order: 1;
+  }
+
+  .calendlyContainer {
+    /* margin-top: auto; */
+    order: 3;
+    margin-bottom: 32px;
+  }
+
+  .socialIcons {
+    /* margin-top: auto; */
+    order: 4;
+    /* justify-self: flex-end; */
+  }
+}

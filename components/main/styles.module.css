@@ -1,4 +1,4 @@
-/* .rootContainer {
+.rootContainer {
   width: 100%;
 
   display: flex;
@@ -6,11 +6,15 @@
   padding: 32px 16px 0 16px;
   position: relative;
   scroll-behavior: smooth;
+  /* overflow: auto; */
 }
 
 
 @media (min-width: 850px) {
   .rootContainer {
+    /* max-width: 1027px;
+    margin-right: auto;
+    margin-left: auto; */
     padding-left: 15%;
     padding-right: 5%;
     flex-direction: row;
@@ -25,4 +29,4 @@
     padding-left: 15%;
     padding-right: 15%;
   }
-} */
+}
