@@ -4,10 +4,6 @@
   flex-direction: column;
   justify-content: center;
   padding-top: 1.5rem;
-  /* padding-bottom: 6rem; */
-  /* margin-top: 90px; */
-  /* position: sticky;
-  top: 0; */
 }
 
 .content {
@@ -70,16 +66,16 @@
   padding: 0;
   margin: 0;
   display: none;
-  /* padding: 16px; */
   color: var(--secondary-text-color);
-  /* width: 40%; */
   order: 2;
-  width: 170px;
+  width: 190px;
+}
+
+.menu li {
+  margin-bottom: 8px;
 }
 
 .menu li a {
-  /* padding-bottom: 8px;
-  border-bottom: 3px solid transparent; */
   padding: 11px 0;
   display: inline-block;
   font-size: 12px;
@@ -87,7 +83,6 @@
   font-weight: 700;
 }
 
-/* .menu a:hover::before, */
 .menu a span {
   display: none;
   width: 30px;
@@ -99,15 +94,20 @@
 
 .menu li span {
   display: inline-block;
+  width: 30px;
+  transition: width .3s ease;
 }
 
-.menu li.active span {
-  width: 50px;
+.menu li.active span,
+.menu li:hover span {
+  width: 60px;
+  transition: width .3s ease;
   height: 2px;
   background-color: var(--main-text-color);
 }
 
-.menu li.active {
+.menu li.active,
+.menu li:hover {
   color: var(--main-text-color);
 }
 
@@ -129,10 +129,6 @@
   .calendlySocial {
     margin-top: auto;
   }
-
-  /* .calendlyContainer {
-    margin-bottom: 32px;
-  } */
 }
 
 @media (min-width: 850px) {
@@ -158,14 +154,11 @@
   }
 
   .calendlyContainer {
-    /* margin-top: auto; */
     order: 3;
     margin-bottom: 32px;
   }
 
   .socialIcons {
-    /* margin-top: auto; */
     order: 4;
-    /* justify-self: flex-end; */
   }
 }

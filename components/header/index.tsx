@@ -20,11 +20,11 @@ export function Header(props: { selectedMenuItem: string }) {
 					<h1 className={styles.name}>Wilson Balderrama</h1>
 					<h2 className={styles.position}>Senior Frontend Engineer</h2>
 					<p className={styles.motto}>
-						Turning ideas into interactive experiences.
+						Turning ideas into interactive experiences
 					</p>
 				</div>
 
-				<ul className={clsx(styles.menu, styles.glassBox)}>
+				<ul className={styles.menu}>
 					<li
 						className={clsx({
 							[styles.active]: props.selectedMenuItem === MenuItem.About,

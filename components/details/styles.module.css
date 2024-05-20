@@ -70,6 +70,7 @@
 
 .about {
   white-space: pre-line;
+  text-align: justify;
   /* margin-top: 16px; */
   margin-bottom: 60px;
 }
