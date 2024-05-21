@@ -37,7 +37,6 @@ export function Details(props: {
 	}, []);
 
 	useEffect(() => {
-		console.log(`WILSONX isExperienceDisplayed`, { isExperienceDisplayed });
 		props.setSelectedMenuItem(
 			isExperienceDisplayed ? MenuItem.Experience : MenuItem.About
 		);
