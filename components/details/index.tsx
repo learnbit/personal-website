@@ -11,7 +11,6 @@ export function Details(props: {
 	mainRef: React.MutableRefObject<null>;
 	setSelectedMenuItem: React.Dispatch<React.SetStateAction<MenuItem>>;
 }) {
-	// const detailsRef = useRef(null);
 	const experienceRef = useRef(null);
 	const [isExperienceDisplayed, setIsExperienceDisplayed] = useState(false);
 
@@ -23,7 +22,6 @@ export function Details(props: {
 			{
 				root: props.mainRef.current,
 				rootMargin: "-300px",
-				// rootMargin: "0px",
 			}
 		);
 
@@ -40,7 +38,7 @@ export function Details(props: {
 		props.setSelectedMenuItem(
 			isExperienceDisplayed ? MenuItem.Experience : MenuItem.About
 		);
-	}, [isExperienceDisplayed]);
+	}, [props, isExperienceDisplayed]);
 
 	return (
 		<>

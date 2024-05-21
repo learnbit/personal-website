@@ -7,7 +7,7 @@ import Calendly from "../calendly/index";
 import clsx from "clsx";
 import { MenuItem } from "../main";
 
-export function Header(props: { selectedMenuItem: string }) {
+export function Headline(props: { selectedMenuItem: string }) {
 	const resumeURL =
 		"https://firebasestorage.googleapis.com/v0/b/airtmdashboard.appspot.com/o/WilsonRaul_Balderrama_Resume.pdf?alt=media&token=43391f34-397a-4f49-a214-f82838cef924";
 	const linkedinURL = "https://www.linkedin.com/in/wilsonbalderrama/";

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Details } from "@/components/details/index";
-import { Header } from "@/components/header";
+import { Headline } from "@/components/headline";
 
 import styles from "./styles.module.css";
 
@@ -40,7 +40,7 @@ export function Main() {
 
 	return (
 		<main id="root" ref={mainRef} className={styles.rootContainer}>
-			<Header selectedMenuItem={selectedMenuItem} />
+			<Headline selectedMenuItem={selectedMenuItem} />
 			<Details mainRef={mainRef} setSelectedMenuItem={setSelectedMenuItem} />
 		</main>
 	);

@@ -13,8 +13,6 @@ export function SocialIcon(props: SocialIconProps) {
 	const isStackoverflow = props.type === "stackoverflow";
 	const isPDF = props.type === "pdf";
 
-	//
-
 	return (
 		<div
 			className={clsx(styles.container, {

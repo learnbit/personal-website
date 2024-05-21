@@ -30,10 +30,6 @@
   margin-left: 40px;
 }
 
-/* .experienceMobile {
-  margin-bottom: 24px;
-} */
-
 .glassBox {
   background: rgba(34, 40, 49, 0.9);
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
@@ -47,14 +43,8 @@
   top: 0;
   display: flex;
   margin-top: 60px;
-  /* background-color: var(--main-background-color); */
   height: 50px;
   align-items: center;
-
-  /* background: rgba(34, 40, 49, 0.9);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px); */
 }
 
 .aboutTitleMobile h2,
@@ -64,14 +54,9 @@
   font-weight: 700;
 }
 
-/* .experience {
-  margin-top: 16px;
-} */
-
 .about {
   white-space: pre-line;
   text-align: justify;
-  /* margin-top: 16px; */
   margin-bottom: 60px;
 }
 
@@ -90,12 +75,9 @@
     padding: 0 16px;
     scroll-margin: 200px;
     margin-bottom: 90px;
-    /* margin-top: 40px; */
-    /* margin-bottom: 42px; */
   }
 
   .container {
-    /* overflow-y: auto; */
     padding-top: 6rem;
   }
 
@@ -106,7 +88,6 @@
     top: 0;
     padding-right: inherit;
   }
-
 
   .experience {
     scroll-margin: 90px;
