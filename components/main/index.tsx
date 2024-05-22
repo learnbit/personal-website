@@ -39,9 +39,9 @@ export function Main() {
 	}, []);
 
 	return (
-		<main id="root" ref={mainRef} className={styles.rootContainer}>
+		<div ref={mainRef} className={styles.rootContainer}>
 			<Headline selectedMenuItem={selectedMenuItem} />
 			<Details mainRef={mainRef} setSelectedMenuItem={setSelectedMenuItem} />
-		</main>
+		</div>
 	);
 }

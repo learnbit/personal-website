@@ -14,7 +14,7 @@ export function Headline(props: { selectedMenuItem: string }) {
 	const stackoverflowURL = "https://stackoverflow.com/users/1591584/wilson";
 
 	return (
-		<div id="test" className={styles.container}>
+		<header className={styles.container}>
 			<div className={styles.content}>
 				<div className={styles.namePositionContainer}>
 					<h1 className={styles.name}>Wilson Balderrama</h1>
@@ -23,41 +23,54 @@ export function Headline(props: { selectedMenuItem: string }) {
 						Turning ideas into interactive experiences
 					</p>
 				</div>
-
-				<ul className={styles.menu}>
-					<li
-						className={clsx({
-							[styles.active]: props.selectedMenuItem === MenuItem.About,
-						})}
-					>
-						<a href="#about">
-							<span></span>
-							ABOUT
-						</a>
-					</li>
-					<li
-						className={clsx({
-							[styles.active]: props.selectedMenuItem === MenuItem.Experience,
-						})}
-					>
-						<a href="#experience">
-							<span></span>
-							EXPERIENCE
-						</a>
-					</li>
-				</ul>
-
-				<div className={styles.calendlySocial}>
+				<nav className={styles.menu} aria-label="In-page jump links">
+					<ul>
+						<li
+							className={clsx({
+								[styles.active]: props.selectedMenuItem === MenuItem.About,
+							})}
+						>
+							<a href="#about">
+								<span></span>
+								ABOUT
+							</a>
+						</li>
+						<li
+							className={clsx({
+								[styles.active]: props.selectedMenuItem === MenuItem.Experience,
+							})}
+						>
+							<a href="#experience">
+								<span></span>
+								EXPERIENCE
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div className={styles.socialContainer} aria-label="Social media">
 					<div className={styles.socialIcons}>
-						<a target="_blank" href={linkedinURL}>
+						<a
+							target="_blank"
+							href={linkedinURL}
+							aria-label="LinkedIn (opens in a new tab)"
+							title="LinkedIn"
+						>
 							<SocialIcon type={"linkedin"} />
 						</a>
 
-						<a target="_blank" href={stackoverflowURL}>
+						<a
+							target="_blank"
+							href={stackoverflowURL}
+							aria-label="Stackoverflow (opens in a new tab)"
+						>
 							<SocialIcon type={"stackoverflow"} />
 						</a>
 
-						<a target="_blank" href={resumeURL}>
+						<a
+							target="_blank"
+							href={resumeURL}
+							aria-label="Resume in pdf format (opens in a new tab)"
+						>
 							<SocialIcon type={"pdf"} />
 						</a>
 					</div>
@@ -67,6 +80,6 @@ export function Headline(props: { selectedMenuItem: string }) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</header>
 	);
 }

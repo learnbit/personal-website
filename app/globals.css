@@ -64,3 +64,9 @@ h2 {
 p {
   line-height: 1.5em;
 }
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

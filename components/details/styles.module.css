@@ -1,6 +1,5 @@
 .container {
   flex: 1;
-  /* position: relative; */
   box-sizing: content-box;
 }
 
@@ -62,6 +61,10 @@
 
 .spacing {
   height: 16px;
+}
+
+.experienceContainer {
+  margin-bottom: 26px;
 }
 
 

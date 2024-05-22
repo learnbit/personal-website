@@ -31,17 +31,19 @@ export default function Experience(props: ExperienceProps) {
 	});
 
 	return (
-		<div className={styles.container}>
-			<div className={styles.years}>
+		<li className={styles.container}>
+			<div className={styles.years} aria-label={yearsAndMonths}>
 				<span className={styles.year}>{years}</span>
 				<span className={styles.yearsAndMonths}>{yearsAndMonths}</span>
 			</div>
-			<div className={styles.details}>
+			<div className={styles.details} aria-label={title}>
 				<h3 className={styles.title}>{title}</h3>
 				<p className={styles.description}>{description}</p>
 
-				<div className={styles.skills}>{allSkills}</div>
+				<div className={styles.skills} aria-label="Technologies used">
+					{allSkills}
+				</div>
 			</div>
-		</div>
+		</li>
 	);
 }

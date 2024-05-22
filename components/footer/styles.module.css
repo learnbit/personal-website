@@ -1,0 +1,13 @@
+.container {
+  padding-bottom: 32px;
+  font-size: 14px;
+}
+
+.container a {
+  color: var(--main-text-color);
+}
+
+.container a:hover {
+  cursor: pointer;
+  color: var(--skill-text-color)
+}

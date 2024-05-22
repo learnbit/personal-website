@@ -111,7 +111,7 @@
   color: var(--main-text-color);
 }
 
-.calendlySocial {
+.socialContainer {
   display: flex;
   flex-direction: column;
   order: 3
@@ -126,7 +126,7 @@
     margin-top: 40px;
   }
 
-  .calendlySocial {
+  .socialContainer {
     margin-top: auto;
   }
 }
