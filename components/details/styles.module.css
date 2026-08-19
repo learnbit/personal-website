@@ -67,9 +67,7 @@
   margin-bottom: 26px;
 }
 
-
 @media (min-width: 850px) {
-
   .spacing {
     height: 0;
   }
@@ -80,10 +78,6 @@
 
   .experienceContainer {
     scroll-margin-top: 0;
-    padding-top: 120px;
-    margin-top: -120px;
-    position: relative;
-    background-color: var(--main-background-color);
   }
 
   .about {
@@ -106,9 +100,8 @@
   .aboutTitleMobile {
     display: none;
   }
-  
+
   .experienceMobile {
     display: none;
   }
 }
-
