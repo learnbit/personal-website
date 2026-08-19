@@ -21,10 +21,9 @@ export function Details(props: {
 		const updateSelectedSection = () => {
 			const containerTop = scrollContainer.getBoundingClientRect().top;
 			const experienceTop = experienceSection.getBoundingClientRect().top;
-			const activationOffset = 120;
 
 			props.setSelectedMenuItem(
-				experienceTop <= containerTop + activationOffset
+				experienceTop <= containerTop
 					? MenuItem.Experience
 					: MenuItem.About
 			);
