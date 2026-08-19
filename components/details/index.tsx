@@ -44,7 +44,7 @@ export function Details(props: {
 	}, [props.mainRef, props.setSelectedMenuItem]);
 
 	return (
-		<main ref={props.mainRef} className={styles.container}>
+		<main className={styles.container}>
 			<section id="about" ref={aboutRef} aria-label="About me">
 				<div className={clsx(styles.aboutTitleMobile, styles.glassBox)}>
 					<h2>ABOUT</h2>
