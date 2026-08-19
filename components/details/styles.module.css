@@ -74,9 +74,13 @@
     height: 0;
   }
 
+  .aboutSection,
+  .experienceContainer {
+    scroll-margin-top: 120px;
+  }
+
   .about {
     padding: 0 16px;
-    scroll-margin: 200px;
     margin-bottom: 90px;
   }
 
@@ -90,10 +94,6 @@
     position: fixed;
     top: 0;
     padding-right: inherit;
-  }
-
-  .experience {
-    scroll-margin: 90px;
   }
 
   .aboutTitleMobile {
