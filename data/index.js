@@ -26,7 +26,6 @@ export const experiences = [
       "OpenAI Integration",
     ],
   },
-  ,
   {
     startYear: "Apr 2021",
     endYear: "Mar 2024",
