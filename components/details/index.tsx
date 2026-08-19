@@ -42,7 +42,7 @@ export function Details(props: {
 
 	return (
 		<main className={styles.container}>
-			<section id="about" aria-label="About me">
+			<section id="about" className={styles.aboutSection} aria-label="About me">
 				<div className={clsx(styles.aboutTitleMobile, styles.glassBox)}>
 					<h2>ABOUT</h2>
 				</div>
