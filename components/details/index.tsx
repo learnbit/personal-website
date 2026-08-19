@@ -7,45 +7,42 @@ import { MenuItem } from "../main";
 import { Footer } from "@/components/footer";
 
 export function Details(props: {
-	mainRef: React.MutableRefObject<null>;
+	mainRef: React.MutableRefObject<HTMLElement | null>;
 	setSelectedMenuItem: React.Dispatch<React.SetStateAction<MenuItem>>;
 }) {
-	const aboutRef = useRef<HTMLElement | null>(null);
 	const experienceRef = useRef<HTMLElement | null>(null);
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				const visibleEntries = entries
-					.filter((entry) => entry.isIntersecting)
-					.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+		const scrollContainer = props.mainRef.current;
+		const experienceSection = experienceRef.current;
 
-				const visibleSection = visibleEntries[0];
-				if (!visibleSection) return;
+		if (!scrollContainer || !experienceSection) return;
 
-				props.setSelectedMenuItem(
-					visibleSection.target.id === "experience"
-						? MenuItem.Experience
-						: MenuItem.About
-				);
-			},
-			{
-				root: props.mainRef.current,
-				threshold: [0.25, 0.5, 0.75],
-			}
-		);
+		const updateSelectedSection = () => {
+			const containerTop = scrollContainer.getBoundingClientRect().top;
+			const experienceTop = experienceSection.getBoundingClientRect().top;
+			const activationOffset = 120;
 
-		if (aboutRef.current) observer.observe(aboutRef.current);
-		if (experienceRef.current) observer.observe(experienceRef.current);
+			props.setSelectedMenuItem(
+				experienceTop <= containerTop + activationOffset
+					? MenuItem.Experience
+					: MenuItem.About
+			);
+		};
+
+		updateSelectedSection();
+		scrollContainer.addEventListener("scroll", updateSelectedSection, {
+			passive: true,
+		});
 
 		return () => {
-			observer.disconnect();
+			scrollContainer.removeEventListener("scroll", updateSelectedSection);
 		};
 	}, [props.mainRef, props.setSelectedMenuItem]);
 
 	return (
 		<main className={styles.container}>
-			<section id="about" ref={aboutRef} aria-label="About me">
+			<section id="about" aria-label="About me">
 				<div className={clsx(styles.aboutTitleMobile, styles.glassBox)}>
 					<h2>ABOUT</h2>
 				</div>
