@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import Experience from "../experience";
 import { experiences, details } from "../../data";
@@ -10,47 +10,51 @@ export function Details(props: {
 	mainRef: React.MutableRefObject<null>;
 	setSelectedMenuItem: React.Dispatch<React.SetStateAction<MenuItem>>;
 }) {
-	const experienceRef = useRef(null);
-	const [isExperienceDisplayed, setIsExperienceDisplayed] = useState(false);
+	const aboutRef = useRef<HTMLElement | null>(null);
+	const experienceRef = useRef<HTMLElement | null>(null);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
-			([entry]) => {
-				setIsExperienceDisplayed(entry.isIntersecting);
+			(entries) => {
+				const visibleEntries = entries
+					.filter((entry) => entry.isIntersecting)
+					.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+				const visibleSection = visibleEntries[0];
+				if (!visibleSection) return;
+
+				props.setSelectedMenuItem(
+					visibleSection.target.id === "experience"
+						? MenuItem.Experience
+						: MenuItem.About
+				);
 			},
 			{
 				root: props.mainRef.current,
-				rootMargin: "-300px",
+				threshold: [0.25, 0.5, 0.75],
 			}
 		);
 
-		if (experienceRef.current) {
-			observer.observe(experienceRef.current);
-		}
+		if (aboutRef.current) observer.observe(aboutRef.current);
+		if (experienceRef.current) observer.observe(experienceRef.current);
 
 		return () => {
 			observer.disconnect();
 		};
-	}, [props.mainRef]);
-
-	useEffect(() => {
-		props.setSelectedMenuItem(
-			isExperienceDisplayed ? MenuItem.Experience : MenuItem.About
-		);
-	}, [props, isExperienceDisplayed]);
+	}, [props.mainRef, props.setSelectedMenuItem]);
 
 	return (
 		<main ref={props.mainRef} className={styles.container}>
-			<section aria-label="About me">
+			<section id="about" ref={aboutRef} aria-label="About me">
 				<div className={clsx(styles.aboutTitleMobile, styles.glassBox)}>
 					<h2>ABOUT</h2>
 				</div>
 				<div className={styles.spacing}></div>
-				<p id="about" className={styles.about}>
-					{details}
-				</p>
+				<p className={styles.about}>{details}</p>
 			</section>
 			<section
+				id="experience"
+				ref={experienceRef}
 				className={styles.experienceContainer}
 				aria-label="Work experience"
 			>
@@ -59,7 +63,7 @@ export function Details(props: {
 				</div>
 
 				<div className={styles.spacing}></div>
-				<ol ref={experienceRef} id="experience" className={styles.experience}>
+				<ol className={styles.experience}>
 					{experiences.map((ex, i) => (
 						<Experience key={i} {...ex} />
 					))}
