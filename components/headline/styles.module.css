@@ -27,11 +27,6 @@
   color: var(--main-text-color);
 }
 
-.calendlyContainer {
-  margin-top: 32px;
-  order: 4;
-}
-
 .motto {
   margin-top: 8px;
 }
@@ -151,11 +146,6 @@
 
   .namePositionContainer {
     order: 1;
-  }
-
-  .calendlyContainer {
-    order: 3;
-    margin-bottom: 32px;
   }
 
   .socialIcons {
