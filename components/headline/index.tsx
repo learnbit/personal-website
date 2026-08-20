@@ -3,7 +3,6 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { SocialIcon } from "@/components/social-icon";
-import Calendly from "../calendly/index";
 import clsx from "clsx";
 import { MenuItem } from "../main";
 
@@ -73,10 +72,6 @@ export function Headline(props: { selectedMenuItem: string }) {
             >
               <SocialIcon type={"pdf"} />
             </a>
-          </div>
-          <div className={styles.calendlyContainer}>
-            <Calendly />
-            <div id="__next"></div>
           </div>
         </div>
       </div>
